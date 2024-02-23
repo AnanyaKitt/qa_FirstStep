@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20240223 19:56:59.313" rpa="false" schemaversion="4">
+<suite id="s1" name="Temp" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Temp.robot">
+<test id="s1-t1" name="Fill data in search textbox google.com via locator" line="14">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240223 19:56:59.503" level="INFO">Opening browser 'Chrome' to base url 'http://www.google.com'.</msg>
+<status status="PASS" starttime="20240223 19:56:59.502" endtime="20240223 19:57:03.823"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=q</arg>
+<arg>Facebook</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240223 19:57:03.825" level="INFO">Typing text 'Facebook' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20240223 19:57:03.824" endtime="20240223 19:57:03.937"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240223 19:57:03.940" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
+<msg timestamp="20240223 19:57:04.232" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20240223 19:57:04.233" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20240223 19:57:03.938" endtime="20240223 19:57:06.627"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${expected_result}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240223 19:57:06.628" endtime="20240223 19:57:06.688"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240223 19:57:11.690" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240223 19:57:06.689" endtime="20240223 19:57:11.692"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240223 19:57:11.694" endtime="20240223 19:57:11.791"/>
+</kw>
+<status status="PASS" starttime="20240223 19:56:59.500" endtime="20240223 19:57:11.792"/>
+</test>
+<status status="PASS" starttime="20240223 19:56:59.317" endtime="20240223 19:57:11.794"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Temp">Temp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
