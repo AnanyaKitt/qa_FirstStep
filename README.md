@@ -1,6 +1,6 @@
 # qa_FirstStep
 Hello eveyone!!!
-I'm QA Engineer, I'm just normal people need to growth in automation test. This is my workspace to practice my skills. Hope this will help other too.
+I'm QA Engineer, I'm just a normal people need to growth up in automation test. This is my workspace to practice my skills. Hope this will help other too.
 
 ***ABOUT CODE***
 This workspace has many robotframework practices. Beginner and will be advanced (in the future).
