@@ -1,59 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250112 02:52:53.733" rpa="false" schemaversion="4">
-<suite id="s1" name="BlazeDemo" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Test.blazedemo/BlazeDemo.robot">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250112 03:10:25.364" rpa="false" schemaversion="4">
+<suite id="s1" name="BlazeDemo" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/RobotFramework/Test.blazedemo/BlazeDemo.robot">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250112 02:52:53.834" level="INFO">Opening browser 'safari' to base url 'https://blazedemo.com/'.</msg>
-<status status="PASS" starttime="20250112 02:52:53.833" endtime="20250112 02:52:57.039"/>
+<msg timestamp="20250112 03:10:25.431" level="INFO">Opening browser 'safari' to base url 'https://blazedemo.com/'.</msg>
+<status status="PASS" starttime="20250112 03:10:25.430" endtime="20250112 03:10:27.833"/>
 </kw>
-<test id="s1-t1" name="Choose your departure &amp; Destination city" line="21">
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>xpath://select[@name='fromPort']</arg>
-<arg>Paris</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20250112 02:52:57.043" level="INFO">Selecting options from selection list 'xpath://select[@name='fromPort']' by value Paris.</msg>
-<status status="PASS" starttime="20250112 02:52:57.041" endtime="20250112 02:52:57.075"/>
+<test id="s1-t1" name="Fill details to purchase flight" line="31">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=inputName</arg>
+<arg>${inputName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250112 03:10:27.837" level="INFO">Typing text 'AnanyaKitt' into text field 'name=inputName'.</msg>
+<msg timestamp="20250112 03:10:27.896" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250112 03:10:27.896" level="FAIL">Element with locator 'name=inputName' not found.</msg>
+<status status="FAIL" starttime="20250112 03:10:27.835" endtime="20250112 03:10:27.899"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=address</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.899" endtime="20250112 03:10:27.899"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=city</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.900" endtime="20250112 03:10:27.900"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=state</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.900" endtime="20250112 03:10:27.900"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=zipCode</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.900" endtime="20250112 03:10:27.901"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>xpath://select[@name='toPort']</arg>
-<arg>Rome</arg>
+<arg>xpath://select[@name='cardType']</arg>
+<arg>amex</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20250112 02:52:57.076" level="INFO">Selecting options from selection list 'xpath://select[@name='toPort']' by value Rome.</msg>
-<status status="PASS" starttime="20250112 02:52:57.075" endtime="20250112 02:52:57.113"/>
+<status status="NOT RUN" starttime="20250112 03:10:27.901" endtime="20250112 03:10:27.901"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=creditCardNumber</arg>
+<arg>${creditCardNumber}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.902"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=creditCardMonth</arg>
+<arg>11</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.902"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=creditCardYear</arg>
+<arg>2017</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.902"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=nameOnCard</arg>
+<arg>${nameOnCard}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.903"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>css:input[type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250112 02:52:57.114" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
-<status status="PASS" starttime="20250112 02:52:57.114" endtime="20250112 02:52:57.149"/>
+<status status="NOT RUN" starttime="20250112 03:10:27.903" endtime="20250112 03:10:27.903"/>
 </kw>
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>@{flights}</var>
-<arg>css:table[class='table']&gt;tbody tr</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20250112 02:52:57.155" level="INFO">@{flights} = [ ]</msg>
-<status status="PASS" starttime="20250112 02:52:57.149" endtime="20250112 02:52:57.155"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20250112 03:10:27.903" endtime="20250112 03:10:27.903"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>css:input[type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250112 02:52:57.156" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
-<status status="PASS" starttime="20250112 02:52:57.156" endtime="20250112 02:52:57.175"/>
-</kw>
-<status status="PASS" starttime="20250112 02:52:57.040" endtime="20250112 02:52:57.175"/>
+<status status="FAIL" starttime="20250112 03:10:27.834" endtime="20250112 03:10:27.904">Element with locator 'name=inputName' not found.</status>
 </test>
-<status status="PASS" starttime="20250112 02:52:53.737" endtime="20250112 02:52:57.176"/>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250112 03:10:27.904" endtime="20250112 03:10:28.131"/>
+</kw>
+<status status="FAIL" starttime="20250112 03:10:25.366" endtime="20250112 03:10:28.131"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="BlazeDemo">BlazeDemo</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="BlazeDemo">BlazeDemo</stat>
 </suite>
 </statistics>
 <errors>
