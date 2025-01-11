@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${url}  http://www.google.com
-${browser}  Chrome
+${browser}  safari
 ${text}  name=q
 
 ${expected_result}
@@ -17,7 +17,7 @@ Fill data in search textbox google.com via locator
     Press Keys    ${text}    RETURN
     Wait Until Page Contains    ${expected_result}
     Sleep    5s
-    Close Browser
+    #Close Browser
     
 
      
