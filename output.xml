@@ -1,103 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250112 03:10:25.364" rpa="false" schemaversion="4">
-<suite id="s1" name="BlazeDemo" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/RobotFramework/Test.blazedemo/BlazeDemo.robot">
-<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250112 05:06:16.745" rpa="false" schemaversion="4">
+<suite id="s1" name="Invalid Password" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Test.login/invalid_password.robot">
+<test id="s1-t1" name="Verify Login Success" line="16">
+<kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250112 03:10:25.431" level="INFO">Opening browser 'safari' to base url 'https://blazedemo.com/'.</msg>
-<status status="PASS" starttime="20250112 03:10:25.430" endtime="20250112 03:10:27.833"/>
-</kw>
-<test id="s1-t1" name="Fill details to purchase flight" line="31">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=inputName</arg>
-<arg>${inputName}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250112 03:10:27.837" level="INFO">Typing text 'AnanyaKitt' into text field 'name=inputName'.</msg>
-<msg timestamp="20250112 03:10:27.896" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20250112 03:10:27.896" level="FAIL">Element with locator 'name=inputName' not found.</msg>
-<status status="FAIL" starttime="20250112 03:10:27.835" endtime="20250112 03:10:27.899"/>
+<msg timestamp="20250112 05:06:16.811" level="INFO">Opening browser 'Chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<status status="PASS" starttime="20250112 05:06:16.811" endtime="20250112 05:06:21.658"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>name=address</arg>
-<arg>${address}</arg>
+<arg>id=username</arg>
+<arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.899" endtime="20250112 03:10:27.899"/>
+<msg timestamp="20250112 05:06:21.661" level="INFO">Typing text 'incorrectUser' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20250112 05:06:21.659" endtime="20250112 05:06:21.793"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>name=city</arg>
-<arg>${city}</arg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.900" endtime="20250112 03:10:27.900"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=state</arg>
-<arg>${state}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.900" endtime="20250112 03:10:27.900"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=zipCode</arg>
-<arg>${zipcode}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.900" endtime="20250112 03:10:27.901"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>xpath://select[@name='cardType']</arg>
-<arg>amex</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.901" endtime="20250112 03:10:27.901"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=creditCardNumber</arg>
-<arg>${creditCardNumber}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.902"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=creditCardMonth</arg>
-<arg>11</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.902"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=creditCardYear</arg>
-<arg>2017</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.902"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=nameOnCard</arg>
-<arg>${nameOnCard}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.902" endtime="20250112 03:10:27.903"/>
+<msg timestamp="20250112 05:06:21.794" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20250112 05:06:21.793" endtime="20250112 05:06:21.839"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>css:input[type='submit']</arg>
+<arg>id=submit</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.903" endtime="20250112 03:10:27.903"/>
+<msg timestamp="20250112 05:06:21.839" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" starttime="20250112 05:06:21.839" endtime="20250112 05:06:21.881"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20250112 03:10:27.903" endtime="20250112 03:10:27.903"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class="show"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250112 05:06:21.882" endtime="20250112 05:06:21.906"/>
 </kw>
-<status status="FAIL" starttime="20250112 03:10:27.834" endtime="20250112 03:10:27.904">Element with locator 'name=inputName' not found.</status>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>xpath=//div[@class="show"]</arg>
+<arg>${WELCOME_MSG}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20250112 05:06:21.907" level="INFO">Verifying element 'xpath=//div[@class="show"]' contains exact text 'Your username is invalid!'.</msg>
+<status status="PASS" starttime="20250112 05:06:21.906" endtime="20250112 05:06:21.919"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20250112 05:06:21.919" endtime="20250112 05:06:21.991"/>
+</kw>
+<status status="PASS" starttime="20250112 05:06:16.811" endtime="20250112 05:06:21.992"/>
 </test>
-<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20250112 03:10:27.904" endtime="20250112 03:10:28.131"/>
-</kw>
-<status status="FAIL" starttime="20250112 03:10:25.366" endtime="20250112 03:10:28.131"/>
+<status status="PASS" starttime="20250112 05:06:16.746" endtime="20250112 05:06:21.992"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="BlazeDemo">BlazeDemo</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Password">Invalid Password</stat>
 </suite>
 </statistics>
 <errors>
