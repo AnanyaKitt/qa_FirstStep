@@ -1,6 +1,5 @@
 *** Comments ***
-###Example case for valid    login by input username, password and click login and display results###
-
+###Example case for valid    login by input username, password and click login and display results
 
 *** Settings ***
 Library     SeleniumLibrary
@@ -12,7 +11,7 @@ ${USERNAME}         incorrectUser
 ${PASSWORD}         Password123
 ${WELCOME_MSG}      Your username is invalid!
 
-
+###Create test case by using id and x path
 *** Test Cases ***
 Verify Login Success
     Open Browser    ${URL}    Chrome
