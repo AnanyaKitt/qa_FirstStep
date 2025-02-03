@@ -1,54 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250114 21:35:33.088" rpa="false" schemaversion="4">
-<suite id="s1" name="Invalid Password" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Test.login/invalid_password.robot">
-<test id="s1-t1" name="Verify Invalid Password Error" line="17">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250203 22:06:00.898" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Invalid Password" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/TestRail/test_invalid_password.robot">
+<kw name="Setup TestRail" library="testrail_integration" type="SETUP">
+<kw name="Create List" library="BuiltIn">
+<var>${auth}</var>
+<arg>${TESTRAIL_USER}</arg>
+<arg>${TESTRAIL_API_KEY}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20250203 22:06:01.071" level="INFO">${auth} = ['ananya.kitt@hotmail.com', 'IqF9HcClnW.o/milsj9N-8ZrKCKeSAyVVRVfOSERh']</msg>
+<status status="PASS" starttime="20250203 22:06:01.070" endtime="20250203 22:06:01.071"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>testrail</arg>
+<arg>${TESTRAIL_URL}</arg>
+<arg>auth=${auth}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20250203 22:06:01.073" level="INFO">Creating Session using : alias=testrail, url=https://ananyakitt.testrail.io, headers={},                     cookies={}, auth=&lt;requests.auth.HTTPBasicAuth object at 0x104f162d0&gt;, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250203 22:06:01.072" endtime="20250203 22:06:01.073"/>
+</kw>
+<status status="PASS" starttime="20250203 22:06:01.070" endtime="20250203 22:06:01.073"/>
+</kw>
+<test id="s1-t1" name="Verify Invalid Password Error" line="14">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250114 21:35:33.153" level="INFO">Opening browser 'Chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
-<status status="PASS" starttime="20250114 21:35:33.153" endtime="20250114 21:35:36.689"/>
+<msg timestamp="20250203 22:06:01.074" level="INFO">Opening browser 'Chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<status status="PASS" starttime="20250203 22:06:01.074" endtime="20250203 22:06:05.900"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@id='username']</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250114 21:35:36.692" level="INFO">Typing text 'student' into text field 'xpath=//input[@id='username']'.</msg>
-<status status="PASS" starttime="20250114 21:35:36.690" endtime="20250114 21:35:36.844"/>
+<msg timestamp="20250203 22:06:05.902" level="INFO">Typing text 'student' into text field 'xpath=//input[@id='username']'.</msg>
+<status status="PASS" starttime="20250203 22:06:05.901" endtime="20250203 22:06:06.057"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//input[@id='password']</arg>
 <arg>${INVALID_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250114 21:35:36.845" level="INFO">Typing text 'wrong_password' into text field 'xpath=//input[@id='password']'.</msg>
-<status status="PASS" starttime="20250114 21:35:36.844" endtime="20250114 21:35:36.887"/>
+<msg timestamp="20250203 22:06:06.058" level="INFO">Typing text 'wrong_password' into text field 'xpath=//input[@id='password']'.</msg>
+<status status="PASS" starttime="20250203 22:06:06.057" endtime="20250203 22:06:06.100"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//button[@id='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250114 21:35:36.887" level="INFO">Clicking button 'xpath=//button[@id='submit']'.</msg>
-<status status="PASS" starttime="20250114 21:35:36.887" endtime="20250114 21:35:36.925"/>
+<msg timestamp="20250203 22:06:06.101" level="INFO">Clicking button 'xpath=//button[@id='submit']'.</msg>
+<status status="PASS" starttime="20250203 22:06:06.100" endtime="20250203 22:06:06.140"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath=//div[@id='error']</arg>
-<arg>timeout=10 seconds</arg>
+<arg>timeout=5 seconds</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250114 21:35:36.925" endtime="20250114 21:35:37.169"/>
+<status status="PASS" starttime="20250203 22:06:06.141" endtime="20250203 22:06:06.197"/>
 </kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${error_text}</var>
 <arg>xpath=//div[@id='error']</arg>
-<arg>${ERROR_MESSAGE}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20250114 21:35:37.171" level="INFO">Verifying element 'xpath=//div[@id='error']' contains exact text 'Your password is invalid!'.</msg>
-<status status="PASS" starttime="20250114 21:35:37.170" endtime="20250114 21:35:37.187"/>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250203 22:06:06.210" level="INFO">${error_text} = Your password is invalid!</msg>
+<status status="PASS" starttime="20250203 22:06:06.198" endtime="20250203 22:06:06.210"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20250114 21:35:37.187" endtime="20250114 21:35:37.265"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${error_text.strip()}" == "Your password is invalid!"</arg>
+<arg>Update TestRail Result</arg>
+<arg>${TEST_ID}</arg>
+<arg>1</arg>
+<arg>"Test Passed: Invalid password message displayed."</arg>
+<arg>ELSE</arg>
+<arg>Update TestRail Result</arg>
+<arg>${TEST_ID}</arg>
+<arg>5</arg>
+<arg>"Test Failed: Expected error message not found."</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Update TestRail Result" library="testrail_integration">
+<arg>${TEST_ID}</arg>
+<arg>1</arg>
+<arg>"Test Passed: Invalid password message displayed."</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${data}</var>
+<arg>status_id=${status_id}</arg>
+<arg>comment=${comment}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20250203 22:06:06.211" level="INFO">${data} = {'status_id': '1', 'comment': '"Test Passed: Invalid password message displayed."'}</msg>
+<status status="PASS" starttime="20250203 22:06:06.211" endtime="20250203 22:06:06.211"/>
 </kw>
-<status status="PASS" starttime="20250114 21:35:33.152" endtime="20250114 21:35:37.265"/>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>testrail</arg>
+<arg>/index.php?/api/v2/add_result/${test_id}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20250203 22:06:08.513" level="INFO">POST Request : url=https://ananyakitt.testrail.io/index.php?/api/v2/add_result/3793 
+ path_url=/index.php?/api/v2/add_result/3793 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '85', 'Content-Type': 'application/json', 'Authorization': 'Basic YW5hbnlhLmtpdHRAaG90bWFpbC5jb206SXFGOUhjQ2xuVy5vL21pbHNqOU4tOFpyS0NLZVNBeVZWUlZmT1NFUmg='} 
+ body=b'{"status_id": "1", "comment": "\\"Test Passed: Invalid password message displayed.\\""}' 
+ </msg>
+<msg timestamp="20250203 22:06:08.513" level="INFO">POST Response : url=https://ananyakitt.testrail.io/index.php?/api/v2/add_result/3793 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 03 Feb 2025 15:04:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '309', 'Connection': 'keep-alive', 'Server': 'Apache', 'Access-Control-Allow-Headers': 'authorization, content-type, x-api-ident', 'Access-Control-Allow-Origin': 'https://testrail-lite.testrail.io', 'Strict-Transport-Security': 'max-age=432000; includeSubdomains', 'Content-Security-Policy': "default-src 'self' data: 'unsafe-eval' 'unsafe-inline' *; frame-ancestors *", 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer', 'Permissions-Policy': 'fullscreen=(), geolocation=(), camera=(), microphone=()', 'X-Frame-Options': 'SAMEORIGIN', 'X-Xss-Protection': '1; mode=block', 'Cross-Origin-Embedder-Policy-Report-Only': 'require-corp', 'Cross-Origin-Opener-Policy': 'unsafe-none', 'Cross-Origin-Resource-Policy': 'same-origin', 'Set-Cookie': 'tr_session=a6eeaa59-c0b8-4b83-b835-01d6bd1a2dc4; secure; HttpOnly; SameSite=None, notificationbar=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/index', 'Vary': 'Origin'} 
+ body={"id":4503,"test_id":3793,"status_id":1,"created_on":1738595053,"assignedto_id":null,"comment":"&amp;quot;Test Passed: Invalid password message displayed.&amp;quot;","version":null,"elapsed":null,"defects":null,"created_by":1,"custom_step_results":null,"custom_testrail_bdd_scenario_results":null,"attachment_ids":[]} 
+ </msg>
+<msg timestamp="20250203 22:06:08.513" level="INFO">/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ananyakitt.testrail.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20250203 22:06:08.514" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250203 22:06:06.211" endtime="20250203 22:06:08.514"/>
+</kw>
+<status status="PASS" starttime="20250203 22:06:06.210" endtime="20250203 22:06:08.514"/>
+</kw>
+<status status="PASS" starttime="20250203 22:06:06.210" endtime="20250203 22:06:08.514"/>
+</kw>
+<status status="PASS" starttime="20250203 22:06:01.074" endtime="20250203 22:06:08.515"/>
 </test>
-<status status="PASS" starttime="20250114 21:35:33.090" endtime="20250114 21:35:37.266"/>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20250203 22:06:08.517" endtime="20250203 22:06:08.603"/>
+</kw>
+<status status="PASS" starttime="20250203 22:06:00.899" endtime="20250203 22:06:08.603"/>
 </suite>
 <statistics>
 <total>
@@ -57,7 +125,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Password">Invalid Password</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Invalid Password">Test Invalid Password</stat>
 </suite>
 </statistics>
 <errors>
