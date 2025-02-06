@@ -1,77 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250204 00:45:13.390" rpa="false" schemaversion="4">
-<suite id="s1" name="Post" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Test.api/Post.robot">
-<test id="s1-t1" name="Verify Create New Post" line="10">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250204 00:45:13.571" level="INFO">Creating Session using : alias=mysession, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20250204 00:45:13.570" endtime="20250204 00:45:13.572"/>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on darwin)" generated="20250206 15:33:18.798" rpa="false" schemaversion="4">
+<suite id="s1" name="Upload" source="/Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Test.upload/upload.robot">
+<test id="s1-t1" name="Upload File Test" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250206 15:33:18.881" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/upload'.</msg>
+<status status="PASS" starttime="20250206 15:33:18.881" endtime="20250206 15:33:25.222"/>
 </kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>tittle=foo</arg>
-<arg>body=bar</arg>
-<arg>userId=1</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20250204 00:45:13.573" level="INFO">${payload} = {'tittle': 'foo', 'body': 'bar', 'userId': '1'}</msg>
-<status status="PASS" starttime="20250204 00:45:13.572" endtime="20250204 00:45:13.573"/>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>id=file-upload</arg>
+<arg>${file_path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20250206 15:33:25.224" level="INFO">Sending /Users/ananyakittipanchasap/Desktop/QA/QA/qa_FirstStep/Test.upload/testfile.txt to browser.</msg>
+<status status="PASS" starttime="20250206 15:33:25.223" endtime="20250206 15:33:25.264"/>
 </kw>
-<kw name="POST" library="RequestsLibrary">
-<var>${response}</var>
-<arg>url=https://jsonplaceholder.typicode.com/posts</arg>
-<arg>json=${payload}</arg>
-<doc>Sends a POST request.</doc>
-<msg timestamp="20250204 00:45:14.594" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
- path_url=/posts 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
- body=b'{"tittle": "foo", "body": "bar", "userId": "1"}' 
- </msg>
-<msg timestamp="20250204 00:45:14.595" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
- status=201, reason=Created 
- headers={'Date': 'Mon, 03 Feb 2025 17:43:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '68', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1738604599&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=QQgAFZlSAT5HU%2FgJgLRPeGlL9HiXnHWsvDCnv1Fc4NQ%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1738604599&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=QQgAFZlSAT5HU%2FgJgLRPeGlL9HiXnHWsvDCnv1Fc4NQ%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1738604631', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'https://jsonplaceholder.typicode.com/posts/101', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"44-nEpRzbDAvGQfqbki4Jp0Z+fAH2o"', 'Via': '1.1 vegur', 'cf-cache-status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '90c438f9aea17b56-BKK', 'alt-svc': 'h3=":443"; ma=86400', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=30269&amp;min_rtt=26973&amp;rtt_var=9707&amp;sent=5&amp;recv=8&amp;lost=0&amp;retrans=0&amp;sent_bytes=2841&amp;recv_bytes=905&amp;delivery_rate=125578&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=e013bf318e75f0a9&amp;ts=823&amp;x=0"'} 
- body={
-  "tittle": "foo",
-  "body": "bar",
-  "userId": "1",
-  "id": 101
-} 
- </msg>
-<msg timestamp="20250204 00:45:14.595" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20250204 00:45:13.573" endtime="20250204 00:45:14.595"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=file-submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250206 15:33:25.264" level="INFO">Clicking button 'id=file-submit'.</msg>
+<status status="PASS" starttime="20250206 15:33:25.264" endtime="20250206 15:33:25.669"/>
 </kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<arg>201</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<msg timestamp="20250204 00:45:14.598" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20250204 00:45:14.596" endtime="20250204 00:45:14.598"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@id='uploaded-files']</arg>
+<arg>timeout=5 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250206 15:33:25.669" endtime="20250206 15:33:25.690"/>
 </kw>
-<kw name="Convert String to JSON" library="RPA.JSON">
-<var>${response_json}</var>
-<arg>${response.text}</arg>
-<doc>Convert a string to a JSON serializable object and return it.</doc>
-<msg timestamp="20250204 00:45:14.600" level="INFO">${response_json} = {'tittle': 'foo', 'body': 'bar', 'userId': '1', 'id': 101}</msg>
-<status status="PASS" starttime="20250204 00:45:14.599" endtime="20250204 00:45:14.601"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${upload_file}</var>
+<arg>xpath=//div[@id='uploaded-files']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250206 15:33:25.701" level="INFO">${upload_file} = testfile.txt</msg>
+<status status="PASS" starttime="20250206 15:33:25.690" endtime="20250206 15:33:25.701"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${response_json["tittle"]}</arg>
-<arg>foo</arg>
+<arg>${upload_file}</arg>
+<arg>testfile.txt</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20250204 00:45:14.601" endtime="20250204 00:45:14.602"/>
+<status status="PASS" starttime="20250206 15:33:25.702" endtime="20250206 15:33:25.702"/>
 </kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${response_json["body"]}</arg>
-<arg>bar</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20250204 00:45:14.603" endtime="20250204 00:45:14.604"/>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20250206 15:33:25.702" endtime="20250206 15:33:25.780"/>
 </kw>
-<status status="PASS" starttime="20250204 00:45:13.570" endtime="20250204 00:45:14.605"/>
+<status status="PASS" starttime="20250206 15:33:18.881" endtime="20250206 15:33:25.780"/>
 </test>
-<status status="PASS" starttime="20250204 00:45:13.392" endtime="20250204 00:45:14.607"/>
+<status status="PASS" starttime="20250206 15:33:18.800" endtime="20250206 15:33:25.781"/>
 </suite>
 <statistics>
 <total>
@@ -80,7 +56,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Post">Post</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Upload">Upload</stat>
 </suite>
 </statistics>
 <errors>
